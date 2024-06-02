@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+// Vai definir um usuário padrão para começar a brincadeira. Bom pro dev testar
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
