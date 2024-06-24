@@ -32,6 +32,10 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
         ];
     }
+// Pra criar um usuário fake é só digitar
+// php artisan tinker
+// \App\Models\User::factory()->create;
+// \App\Models\User::factory()->count(1000)->create;
 
     /**
      * Indicate that the model's email address should be unverified.

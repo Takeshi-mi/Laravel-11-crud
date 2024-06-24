@@ -9,6 +9,7 @@ return Application::configure(basePath: dirname(__DIR__))
         web: __DIR__.'/../routes/web.php',
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
+        // /up na url para verificar se está funcionando, se está funcionando. Se tiver down quer dizer que matou o container
     )
     ->withMiddleware(function (Middleware $middleware) {
         //

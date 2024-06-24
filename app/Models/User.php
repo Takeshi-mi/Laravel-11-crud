@@ -16,6 +16,11 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+     // Esse fillable é muito importante para segurança e o laravel já entrega pronto. Não deixa o hacker colocar outras informações fora essas
+     // Como por exemplo, apertar f12 e tacar um campo com admin value="1"
+     // Só vai deixar ser preenchível e válido os valores dentro do fillable
+
     protected $fillable = [
         'name',
         'email',
@@ -45,3 +50,7 @@ class User extends Authenticatable
         ];
     }
 }
+
+// Pra criar um usuário fake é só digitar
+// php artisan tinker
+// \App\Models\User::factory()->count(20)->create();
