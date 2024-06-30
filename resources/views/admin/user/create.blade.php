@@ -4,14 +4,11 @@
 @section('content')
 
 <h1>Novo usuário</h1>
-@if ($errors->any()) {{--Essa variável $errors já vem no laravel --}}
-    <ul>
-        @foreach ($errors->all() as $error)
-            <li>{{ $error}}</li>
-        @endforeach
 
-    </ul>
-@endif
+{{-- @include('admin.include.errors')  Com isso você inclui o conteúdo de outra view dentro dessa. É útil em casos específicos, como uma view muito grande e não queremos repeti-la--}}
+<x-alert>
+    
+</x-alert> {{-- para chamar o componente basta colocar um x- e o nome--}}
 
     <form action="{{ route('users.store') }}" method="POST">
         <!--<input type='text' name="_token" value="{{ csrf_token() }}"> -->

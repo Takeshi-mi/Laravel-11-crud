@@ -20,7 +20,7 @@ class UserController extends Controller
         //return view ('admin.user.index' , ['user' => $user]);
 
         //Agora vamos fazer do jeito real, listando todos os usuários com paginação
-        $users = User::paginate(20); // User::all(); O laravel já te entrega a paginação de bandeija. Depois é só ir no index e colocar  {{ $users->links() }}
+        $users = User::paginate(10); // User::all(); O laravel já te entrega a paginação de bandeija. Depois é só ir no index e colocar  {{ $users->links() }}
         //dd($users); // Dump and die. É pra debugar. Joga e mata o processo
 
         return view ('admin.user.index', compact('users'));
@@ -49,6 +49,8 @@ class UserController extends Controller
       //  dd($request->all());//dump and die
         User::create($request->all());
 
-        return redirect()->route('users.index')->with('success', 'Usuário criado com sucesso!'); // acesso ao flash
+        return redirect()->route('users.index')->with('success', 'Usuário criado com sucesso!'); // acesso ao flash. É um alert
+        //esse success foi definido no blade. Na view, basta colocar {{ session('success') }}
+        // No caso ele está em components/alert.blade.php @if session()->has('success')
     }
 }

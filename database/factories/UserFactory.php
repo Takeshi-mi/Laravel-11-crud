@@ -34,8 +34,8 @@ class UserFactory extends Factory
     }
 // Pra criar um usuário fake é só digitar
 // php artisan tinker
-// \App\Models\User::factory()->create;
-// \App\Models\User::factory()->count(1000)->create;
+// \App\Models\User::factory()->create();
+// \App\Models\User::factory()->count(1000)->create();
 
     /**
      * Indicate that the model's email address should be unverified.
