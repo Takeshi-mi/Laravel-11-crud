@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,7 @@ class UserController extends Controller
         return view('admin.user.create');
     }
 
-    public function store(Request $request)  //tá trabalhando com dependência injection
+    public function store(StoreUserRequest $request)  //tá trabalhando com dependência injection
     {
 
         //Com o laravel eu evito ter que fazer isso de forma verbosa. Posso colocar injeção de dependência direto na função
@@ -48,7 +49,6 @@ class UserController extends Controller
       //  dd($request->all());//dump and die
         User::create($request->all());
 
-        return redirect()->route('users.index');
-        
+        return redirect()->route('users.index')->with('success', 'Usuário criado com sucesso!'); // acesso ao flash
     }
 }
