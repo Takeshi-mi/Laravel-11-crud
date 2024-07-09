@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 
-//pega o nome do model e coloca no plural. Exemplo: Category - categories
+//Boa prática pra o nome da tabela é pegar o nome do model e coloca no plural. Exemplo: Category - categories
 
 // comando: php artisan make:model Catagory
 {
